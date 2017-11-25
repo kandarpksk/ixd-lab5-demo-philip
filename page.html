@@ -2,6 +2,7 @@
 
 <html>
 <head>
+	<!-- last step -->
 	<!-- Google Analytics Content Experiment code -->
 	<script>function utmx_section(){}function utmx(){}(function(){var
 	k='164722865-0',d=document,l=d.location,c=d.cookie;
@@ -16,6 +17,18 @@
 	'" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
 	</script><script>utmx('url','A/B');</script>
 	<!-- End of Google Analytics Content Experiment code -->
+
+	<!-- first step: practice Analytics -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?
+	id=UA-164722865-0"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		// do not copy this block from slides!
+		gtag('config', 'UA-164722865-0');
+	</script>
 	
 	<title>HCI Design Portfolio</title>
 	<meta charset="utf-8">
@@ -37,30 +50,31 @@
 <!-- remember to put Handlebars templates within script tags
 	 so that the webpage doesn't attempt to load them as HTML -->
 <script id="entry-template" type="text/x-handlebars-template">
+		
+	{{#if grid}}
 
-		{{#if grid}}
+		<span class="together">
+			<img src="{{profilePic}}" class="grid">
+			<button class="likeBtn">Like</button>
+		</span>
 
-			<span class="together">
-				<img src="{{profilePic}}" class="grid">
-				<button onclick="record()">Like</button>
-			</span>
+	{{else}}
 
-		{{else}}
+		<!-- this is the project div to create the grid variation for -->
+		<div class="project" id="project{{index}}">
+			<a href="#" class="thumbnail">
+				<img src="{{profilePic}}" alt="Lorem Pixel image" class="img">
+				<p>{{title}}</p>
+				<div class="like"><button class="btn btn-default likeBtn">Like</button></div>
+			</a>
+		</div>
 
-			<div class="project" id="project{{index}}">
-				<span class="thumbnail">
-					<img src="{{profilePic}}" alt="Lorem Pixel image" class="img">
-					<p>{{title}}</p>
-					<div class="like"><button class="btn btn-default likeBtn" onclick="record()">Like</button></div>
-				</span>
-			</div>
-
-		{{/if}}
+	{{/if}}
 
 </script>
 
 		<div id="templatedProjects">
-		  <!-- templated project HTML code is injected here -->
+			<!-- don't touch this: templated project HTML code injected here -->
 		</div>
 
 	</div>
@@ -69,20 +83,5 @@
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/handlebars-v4.0.11.js"></script>
 	<script src="js/lab5.js"></script>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109809953-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'UA-109809953-1');
-	</script>
-	<script>
-		function record(){
-			ga.getAll()[0].send('event', 'like', 'click');
-			console.log('clicked');
-		}
-	</script>
 </body>
 </html>

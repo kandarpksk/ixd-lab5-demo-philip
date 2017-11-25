@@ -1,12 +1,11 @@
 <!doctype html>
 <html>
 <head>
-	<!-- <title>HCI Design Portfolio</title> -->
-	
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script type="text/javascript">
 		localStorage.setItem("grid", "false");
-		// window.location.replace("page.html");
+		
+		// lines below render page.html
 		$.get("page.html", function (data) {
 			document.open();
 			document.write(data);
@@ -15,8 +14,4 @@
 		}, "text");
 	</script>
 </head>
-<!-- <body>
-	this should not appear to a user, but just in case
-	<a href="page.html">click here to continue...</a>
-</body> -->
 </html>
