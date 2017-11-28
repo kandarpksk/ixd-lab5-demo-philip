@@ -1,4 +1,6 @@
 lab5 demo
 =========
 
-If you are not among the course staff, see https://github.com/kandarpksk/lab5 instead.
+Website Analytics and A/B Testing.
+
+Note that there is a minor deviation from the lab slides: new.html is called alt.html instead.
